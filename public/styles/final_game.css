@@ -1,0 +1,178 @@
+body {
+    background-color: #113c11;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+
+}
+
+.f_header {
+    overflow: hidden;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: relative;
+    background: url(https://novinkipark.ru/wa-data/public/blog/plugins/nbimagepost/1840x1035/937d525990bf46a4c7272dc5ba3b6490.jpg) no-repeat center center fixed;
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+.f_header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.756);
+    z-index: 2;
+}
+
+#f_myBtn,
+#f_myBtn2,
+#f_myBtn3 {
+    border: 3px solid #5c5c5c;
+    background: linear-gradient(0deg, rgba(96, 9, 240, 1) -100%, rgb(88, 204, 107) 100%);
+    font-family: 'Lato', sans-serif;
+    color: rgb(30, 30, 30);
+    padding: 5px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 180px;
+    z-index: 3;
+    border-radius: 15px;
+}
+
+#f_myBtn:hover,
+#f_myBtn2:hover,
+#f_myBtn3:hover {
+    box-shadow: 1px 4px 6px 0 rgba(255, 255, 255, .5),
+        -1px -4px 6px 0 rgba(116, 125, 136, .5),
+        inset -4px -4px 6px 0 rgba(255, 255, 255, .2),
+        inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
+}
+
+.f_buttons-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 600px;
+    margin: 0 auto
+}
+
+.f_modal-btn {
+    border: 3px solid #5c5c5c;
+    border-radius: 10px;
+    padding: 12px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    width: 180px;
+    height: 90px;
+    flex-grow: 1;
+    left: -1%;
+    margin: 0 -110px;
+    margin-top: 15px;
+}
+
+
+#f_myBtn4,
+#f_myBtn5,
+#f_myBtn6 {
+    border: 3px solid #5c5c5c;
+    position: relative;
+    background: linear-gradient(0deg, rgba(96, 9, 240, 1) -100%, rgb(88, 204, 107) 100%);
+    font-family: 'Lato',
+        sans-serif;
+    color: rgb(30, 30, 30);
+    padding: 11px 16px;
+    font-size: 16px;
+    font-weight: bold;
+    width: 165px;
+    height: 60px;
+    z-index: 3;
+    text-align: center;
+}
+
+.f_modal-btn:nth-child(2) {
+    margin-left: calc(50% - 90px);
+}
+
+.f_modal-btn:nth-child(3) {
+    margin-left: calc(50% - 90px);
+}
+
+.f_modal-btn2 {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    padding: 12px 10px;
+    font-size: 18px;
+    font-weight: bold;
+    border: 3px solid #5c5c5c;
+    border-radius: 10px;
+    width: 180px;
+    left: 600px;
+    height: 90px;
+    flex-grow: 1;
+    margin: 60px auto;
+}
+
+.f_table {
+    position: absolute;
+    z-index: 5;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+table.f_iksweb {
+    text-decoration: none;
+    border-collapse: collapse;
+    margin-top: -480px;
+    color: rgb(30, 30, 30);
+    width: 1172px;
+    height: 571px;
+    text-align: center;
+}
+
+table.f_iksweb th {
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+    font-size: bold;
+    color: #212121;
+    background: linear-gradient(0deg, rgba(96, 9, 240, 1) -50%, rgb(88, 204, 107) 100%);
+}
+
+table.f_iksweb td {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+    color: #212121;
+    padding: 5px;
+    background-color: #b2b2b2db;
+}
+
+table.f_iksweb td,
+table.f_iksweb th {
+    white-space: pre-wrap;
+    padding: 10px 5px;
+    line-height: 13px;
+    vertical-align: middle;
+    border: 1px solid rgb(30, 30, 30);
+}
+
+table.f_iksweb td:first-child,
+table.f_iksweb th:first-child {
+    width: 16%;
+}
+
+table.f_iksweb tr:hover td {
+    color: rgb(30, 30, 30);
+    cursor: default;
+}
+
+.hidden {
+    display: none;
+}

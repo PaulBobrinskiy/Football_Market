@@ -1,0 +1,144 @@
+html {
+    background: url(https://polinka.top/uploads/posts/2023-05/1683761775_polinka-top-p-futbolnoe-pole-kartinki-krasivo-19.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+    filter: brightness(70%);
+}
+
+body {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+
+#container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: -30px;
+    margin: auto;
+    width: 260px;
+    height: 310px;
+    border-radius: 5px;
+    background: rgba(3, 3, 3, 0.263);
+    box-shadow: 1px 1px 50px #000;
+    display: none;
+}
+
+
+h1 {
+    font-family: 'Times New Roman', Times, serif;
+    position: relative;
+    margin-top: 0px;
+    text-align: center;
+    font-size: 40px;
+    color: #ddd;
+    text-shadow: 3px 3px 10px #000;
+}
+
+a,
+input {
+    font-family: 'Times New Roman', Times, serif;
+    text-decoration: none;
+    position: relative;
+    width: 80%;
+    display: block;
+    margin: 9px auto;
+    font-size: 19px;
+    color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    border: none;
+    background: rgba(3, 3, 3, 0.336);
+    -webkit-transition: all 2s ease-in-out;
+    -moz-transition: all 2s ease-in-out;
+    -o-transition: all 2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: 3px 3px 10px #767272;
+    background: rgba(0, 0, 0, 0.375);
+}
+
+a {
+    font-family: 'Times New Roman', Times, serif;
+    text-align: center;
+    padding: 4px 8px;
+    background: rgba(54, 54, 53, 0);
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+#remember-container {
+    position: relative;
+    margin: 9px auto;
+}
+
+.checkbox {
+    position: relative;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    background: rgb(3, 3, 3);
+    display: inline-block;
+    width: 16px;
+    height: 15px;
+    margin-top: -3px;
+    left: 80px;
+}
+
+
+
+.checkbox:checked:active {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.603), inset 0px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+
+.checkbox:checked {
+    background: rgba(3, 3, 3, .4);
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05), inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05), inset 15px 10px -12px rgba(255, 255, 255, 0.5);
+    color: #fff;
+}
+
+.checkbox:checked:after {
+    content: '\2714';
+    font-size: 12px;
+    position: absolute;
+    top: 0px;
+    left: 4px;
+    color: #fff;
+}
+
+#remember {
+    position: absolute;
+    font-size: 15px;
+    font-family: 'Times New Roman', Times, serif;
+    color: rgb(228, 219, 219);
+    top: -4px;
+    left: 100px;
+}
+
+#already-logged {
+    text-align: center;
+    padding: 4px 4px;
+    background: rgba(54, 54, 53, 0);
+    display: block;
+    margin: 9px auto;
+    font-size: 19px;
+    color: #fff;
+    border-radius: 6px;
+    border: none;
+    top: -4px;
+}
+
+#already-logged:hover {
+    opacity: 0.7;
+}

@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --index: calc(1vw + 1vh);
+    --transition: cubic-bezier(.1, .7, 0, 1);
+}
+
+body {
+    background-color: rgb(18, 18, 18);
+    opacity: 1;
+    transition: opacity 0.5s ease;
+}
+
+.telegram {
+    position: fixed;
+    top: 10px;
+    left: 1200px;
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border: none;
+    z-index: 1000;
+}
+
+.telegram img {
+    width: 50px;
+    margin-right: 10px;
+}
+
+.telegram a {
+    color: #615b5b;
+    text-decoration: none;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+
+#login-button {
+
+    background-image: url(https://kartinki.pics/uploads/posts/2021-07/thumbs/1625161697_6-kartinkin-com-p-futbolnii-fon-krasivie-foni-6.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    position: fixed;
+    top: 100px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    width: 260px;
+    height: 120px;
+    border-radius: 60%;
+    overflow: hidden;
+    opacity: 0.7;
+    box-shadow: 10px 10px 30px #000;
+    transition: width 1s, height 1s, font-size 1s, opacity 1s, background-color 1s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#login-button p {
+    font-size: 34px;
+    white-space: nowrap;
+    font-weight: normal;
+    text-shadow: -1px -1px #000,
+        0 1px 0 #444;
+    color: #222;
+    transition: all 1s;
+}
+
+#login-button p:last-child {
+    font-size: 0px;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+#login-button:hover p:last-child {
+    font-size: 20px;
+    opacity: 1;
+    transition-delay: 0.5s;
+}
+
+#login-button:hover p {
+    font-size: 44px;
+    color: #1A1A1A;
+    /* opacity: 1; */
+}
+
+
+#login-button:hover {
+    width: 360px;
+    height: 130px;
+    font-size: 24px;
+    opacity: 0.5;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+    height: 100vh;
+}
+
+.items {
+    display: flex;
+    gap: .4rem;
+    perspective: calc(var(--index) * 45);
+}
+
+.item {
+    background-color: black;
+    width: calc(var(--index) * 3);
+    height: calc(var(--index) * 12);
+    background-size: cover;
+    background-position: center;
+    cursor: pointer;
+    filter: grayscale() brightness(.5);
+    transition: transform 3s var(--transition), filter 5s var(--transition), width 3s var(--transition);
+    will-change: transform, filter;
+}
+
+.item::before,
+.item::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 23px;
+    right: calc(var(--index) * -1);
+}
+
+.item::after {
+    left: calc(var(--index) * -1);
+}
+
+.items :hover {
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 10)) rotateY(35deg);
+}
+
+.items :hover+* {
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(40deg);
+    z-index: -1;
+}
+
+.items :hover+*+* {
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 5.5)) rotateY(30deg);
+    z-index: -2;
+}
+
+.items :hover+*+*+* {
+    filter: inherit;
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(14deg);
+    z-index: -3;
+}
+
+.item:has(+ :hover) {
+    transform: translateZ(calc(var(--index) * 10)) rotateY(-35deg);
+    filter: inherit;
+}
+
+.item:has(+ * + :hover) {
+    transform: translateZ(calc(var(--index) * 8.5)) rotateY(-40deg);
+    filter: inherit;
+}
+
+.item:has(+ * + * + :hover) {
+    transform: translateZ(calc(var(--index) * 5.5)) rotateY(-30deg);
+    filter: inherit;
+}
+
+.item:has(+ * + * + * + :hover) {
+    transform: translateZ(calc(var(--index) * 2.5)) rotateY(-14deg);
+    filter: inherit;
+}
+
+.items .item:hover,
+.items .item:focus {
+    width: 17vw;
+    transform: translateZ(calc(var(--index) * 10));
+    filter: inherit;
+    z-index: 100;
+    margin: 0 .45vw;
+}
