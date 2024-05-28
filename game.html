@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/styles/styles_game.css">
+    <link rel="stylesheet" href="public/styles/final_game.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <!--Font Awesome -->
+    <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' />
+</head>
+
+<body>
+    <div class="header">
+        <div class="buttons-container">
+            <button class="modal-btn" id="myBtn">Выберите схему поля</button>
+            <button class="modal-btn" id="myBtn2">Выберите уровень сложности</button>
+            <div class="modal-btn" id="myBtn3">
+                <p>Ваш бюджет: 0</p>
+            </div>
+        </div>
+
+        <div class="modal-btn2" id="myBtn4">
+            <p>Рейтинг команды: 0</p>
+        </div>
+        <div class="modal-btn2" id="myBtn5">
+            <p>Коэфициент сыгранности: 0</p>
+        </div>
+        <div class="modal-btn2" id="myBtn6">
+            <p>Коэфициент возраста: 0</p>
+        </div>
+
+        <div class="frame">
+            <button class="custom-btn btn-2">Выбор игроков</button>
+        </div>
+
+        <div class="table">
+            <table class="iksweb">
+                <thead>
+                    <tr>
+                        <th>Имя игрока</th>
+                        <th>Позиция</th>
+                        <th>Возраст</th>
+                        <th>Страна</th>
+                        <th>Скорость</th>
+                        <th>Удар/Ловкость</th>
+                        <th>Пас/Вынос</th>
+                        <th>Дриблинг/Рефлекс</th>
+                        <th>Защита/Нырок</th>
+                        <th>Физика/Позиция</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="myModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Выберите схему поля</h2>
+                </div>
+                <div class="modal-body">
+
+                </div>
+                <div class="modal-footer2">
+                    <h3>Accept</h3>
+                </div>
+            </div>
+        </div>
+
+        <div id="myModal2" class="modal">
+            <div class="modal-content">
+                <div class="modal-header2">
+                    <!-- <span class="close">&times;</span> -->
+                    <h2>Выберите уровень сложности</h2>
+                </div>
+                <div class="modal-body2">
+                    <select id="difficulty" name="difficulty">
+                        <option value="easy">Пока не решил...</option>
+                        <option value="easy">Easy</option>
+                        <option value="medium">Medium</option>
+                        <option value="hard">Hard</option>
+                    </select>
+                </div>
+                <div class="modal-footer2">
+                    <h3>Accept</h3>
+                </div>
+            </div>
+        </div>
+
+        <div class="backdrop" id="backdrop"></div>
+
+        <div class="alert">
+            <p>cwgfhdj</p>
+        </div>
+
+    </div>
+
+    <div class="f_header">
+        <div class="f_buttons-container">
+            <button class="f_modal-btn" id="f_myBtn">Ваша команда</button>
+            <button class="f_modal-btn" id="f_myBtn2">Команда соперника</button>
+            <button class="f_modal-btn" id="f_myBtn3">
+                <p>Лучшая команда</p>
+            </button>
+        </div>
+
+        <div class="f_modal-btn2" id="f_myBtn4">
+            <p>Рейтинг команды: 0</p>
+        </div>
+        <div class="f_modal-btn2" id="f_myBtn5">
+            <p>Коэфициент сыгранности: 0</p>
+        </div>
+        <div class="f_modal-btn2" id="f_myBtn6">
+            <p>Коэфициент возраста: 0</p>
+        </div>
+
+
+
+        <div class="f_table">
+            <table class="f_iksweb">
+                <thead>
+                    <tr>
+                        <th>Имя игрока</th>
+                        <th>Позиция</th>
+                        <th>Возраст</th>
+                        <th>Страна</th>
+                        <th>Скорость</th>
+                        <th>Удар/Ловкость</th>
+                        <th>Пас/Вынос</th>
+                        <th>Дриблинг/Рефлекс</th>
+                        <th>Защита/Нырок</th>
+                        <th>Физика/Позиция</th>
+                        <th>Стоимость</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td> </td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+    <script type="module" src="game.js"></script>
+
+
+</body>
+
+</html>
