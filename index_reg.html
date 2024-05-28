@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="public/styles/styles_reg.css">
+</head>
+
+<body>
+    <div id="container">
+        <h1>Log In</h1>
+
+        <form>
+            <input type="name" name="name" placeholder="Name">
+            <input type="email" name="email" placeholder="E-mail">
+            <input type="password" name="password" placeholder="Password">
+            <a href="#" onclick="openIndex1()">Log in</a>
+            <a href="#" id="already-logged">Already logged in</a>
+            <div id="remember-container">
+                <input type="checkbox" id="checkbox-2-1" class="checkbox" checked="checked" />
+                <span id="remember">Remember me</span>
+            </div>
+        </form>
+    </div>
+
+    <script src="registration.js"></script>
+    <script>
+        window.onload = function () {
+            document.getElementById("container").style.display = "block";
+        }
+    </script>
+
+    <script src="registration.js"></script>
+</body>
+
+</html>

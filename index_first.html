@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Football Market</title>
+    <link rel="stylesheet" href="public/styles/styles_first.css">
+</head>
+
+<body>
+
+    <video autoplay muted loop id="myVideo">
+        <source src="public/images/UEFA Champions League 2023_24 Intro Concept.mp4">
+    </video>
+
+    <div class="content">
+        <h1>Что же нас ждет?</h1>
+        <p>Добро пожаловать в захватывающий мир футбольных сражений и
+            стратегий! Здесь, в этой виртуальной арене, вас ждет уникальная
+            возможность создать собственную футбольную команду, собрав лучших
+            игроков со всех уголков мира. Готовьтесь к волнующему приключению,
+            где каждый ваш ход и каждый выбор будут иметь
+            значение на пути к победе. Начнем же футбольное путешествие! </p>
+        <button id="myBtn">Pause</button>
+        <button id="startBtn" onclick="openIndex1()">Start</button>
+    </div>
+
+    <script src="display.js"></script>
+    <script>
+        /*Плавное появление страницы обучения*/
+        function openIndex1() {
+            document.body.style.opacity = '0';
+            setTimeout(function () {
+                window.location.href = 'index_train.html';
+            }, 100);
+        }</script>
+
+</body>
+
+</html>

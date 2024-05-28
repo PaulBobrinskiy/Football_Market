@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="public/styles/styles_train.css">
+</head>
+
+<body>
+    <div class="header">
+        <div class="container">
+            <div class="header-down">
+                <div class="header-title">
+                    <p>
+                        Путь к мастерству
+                    </p>
+                    <div class="header-subtitle">
+                        Изучение правил игры
+                    </div>
+                </div>
+                <div class="header-suptitle">
+                    FOOTBALL MARKET
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="cards">
+
+        <div class="container">
+
+            <div class="cards-holder">
+
+                <div class="card" onclick="showPopup1('public/images/field.png')">
+
+                    <div class="field">
+                        <img class="field-img" src="public/images/field.png">
+                    </div>
+
+                    <div class="field-title">
+                        <p>Выбор <span>схемы</span></p>
+                    </div>
+
+                    <div class="field-description1">
+                        Выбор схемы футбольного поля повлияет на расстановку ваших игроков
+                    </div>
+                    <div class="tab_to">
+                        Tab to read more
+                    </div>
+
+                </div>
+
+                <div class="card" onclick="showPopup2('public/images/man.png')">
+                    <div class="field">
+                        <img class="field-img" src="public/images/man.png">
+                    </div>
+                    <div class="field-title">
+                        <p>Подбор <span>игроков</span></p>
+                    </div>
+                    <div class="field-description2">
+
+                        Игроки не только формируют основу команды, но и вносят уникальные навыки и стратегии,
+                        определяющие ее успех.
+                    </div>
+                    <div class="tab_to">
+                        Tab to read more
+                    </div>
+                </div>
+
+                <div class="card" onclick="showPopup3('public/images/chemistry.png')">
+                    <div class="field">
+                        <img class="field-img" src="public/images/chemistry.png">
+                    </div>
+                    <div class="field-title">
+                        <p>Сыгранность <span>команды</span></p>
+                    </div>
+                    <div class="field-description3">
+
+                        Сыгранность — ключевой аспект успеха в любой команде, обеспечивающая эффективное
+                        взаимодействие между игроками.
+                    </div>
+                    <div class="tab_to">
+                        Tab to read more
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div id="popup1" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup1()">&times;</span>
+            <img id="popup-image1" class="logo" src="" alt="">
+            <hr class="separator">
+            <p id="popup-text1" , class="popup-text1"> Выбор футбольной схемы - это ключевой момент,
+                который определяет, каких игроков вам будет выгоднее подбирать в состав.
+                Эта тактическая расстановка определяет, какие какие позиции будут укреплены на поле и
+                с каких позиций вам будут предоставлены игроки (будут отображаться в колонке "позиции")
+                в вашем составе. Правильно подобранная схема может максимально использовать сильные стороны
+                вашей команды и минимизировать ее слабости, обеспечивая баланс и эффективность.
+                Для того, чтобы лучше разобраться в этом кейсе, перейдите по
+            </p>
+            <a href="https://thepfsa.co.uk/ru/football-formations/"> ссылке</a>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup2()">&times;</span>
+            <img id="popup-image2" class="logo" src="" alt="">
+            <hr class="separator">
+            <p id="popup-text2" , class="popup-text2"> Ваш выбор игроков влияет на
+                рейтинг команды: чем лучше качества каждого из них, тем выше ваш итоговый рейтинг.
+                Заметьте, чтобы победить вам нужно его максимизировать!
+                Это главный параметр, на которое оказывает влияние коэфициенты сыгранности и возраста
+                (домножаются на среднее по параметрам всех игроков и получается рейтинг команды).
+                Но будьте осторожны: за каждого игрока придется платить, и ваш бюджет не
+                безграничен. Если вы переплатите, то параметры игроков ухудшатся.
+                Найдите баланс между навыками игроков
+                и финансовыми ограничениями для достижения успеха в игре.</p>
+        </div>
+    </div>
+
+    <div id="popup3" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup3()">&times;</span>
+            <img id="popup-image3" class="logo" src="" alt="">
+            <hr class="separator">
+            <p id="popup-text3" , class="popup-text3">
+                Взаимопонимание на поле играет ключевую роль в успехе команды.
+                Меньшее разнообразие национальностей способствует более слаженной игре и
+                увеличению коэфициента сыгранности. Игроки из одной сборной часто обладают
+                более гармоничными взаимоотношениями и чувством партнерства на поле.
+                Опытные футболисты, накопившие многолетний опыт, способны принести пользу
+                в игре благодаря своим знаниям и умениям, поэтому возрастные игроки зачастую могут быть не дешевыми, но
+                при этом улучшить коэфициент возраста, что благоприятно повлияет на рейтинг команды
+            </p>
+        </div>
+    </div>
+
+
+
+    <div class="button">
+        <button class="start-button" onclick="openIndex1()">Start Game</button>
+    </div>
+    <script src="train.js"></script>
+    <script>
+        /*Плавное появление страницы обучения*/
+        function openIndex1() {
+            document.body.style.opacity = '0';
+            setTimeout(function () {
+                window.location.href = 'game.html';
+            }, 100);
+        }</script>
+
+</body>
+
+</html>
