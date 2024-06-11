@@ -10,6 +10,6 @@ function openIndex1() {
 function openIndex2() {
     document.getElementById('login-button').style.opacity = '0';
     setTimeout(function() {
-        window.location.href = 'index_reg.html';
+        window.location.href = 'index_first.html';
     }, 100); 
 }
