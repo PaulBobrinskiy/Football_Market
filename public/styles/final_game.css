@@ -176,3 +176,26 @@ table.f_iksweb tr:hover td {
 .hidden {
     display: none;
 }
+
+.f_alert {
+    z-index: 6;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    position: fixed;
+    top: 60px;
+    left: 89%;
+    width: 180px;
+    height: 52px;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    font-size: 15px;
+    text-align: center;
+    background: linear-gradient(0deg, rgba(96, 9, 240, 1) -90%, rgb(88, 204, 107) 100%);
+    border: 3px solid #5c5c5c;
+    border-radius: 15px;
+    padding: 10px 10px;
+    padding-top: 20px;
+    background-color: rgba(0, 0, 0, 0.36);
+}
