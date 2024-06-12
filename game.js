@@ -172,7 +172,7 @@ class DraftGame {
                     if (this.selectedPlayersByPosition[position]) {
                         /*То есть, если на определенную позицию уже предоставлялись игроки,
                          то они же предлагаются далее, просто достаем их из selectedPlayersByPosition*/
-                         console.log(this.selectedPlayersByPosition[position])
+                        //  console.log(this.selectedPlayersByPosition[position])
                          this.selectedPlayersByPosition[position].forEach(player => {
                             const option = document.createElement('option');
                             option.value = player.name;
@@ -263,7 +263,7 @@ class DraftGame {
                                         this.selectForAI.push(newPlayer[0]);
                                     }
                                 }
-                                console.log(this.selectForAI)
+                                // console.log(this.selectForAI)
                                 /*Показываем новый бюджет*/
                                 remainingBudget -= parseInt(selectedPlayer.cost)
 
@@ -543,38 +543,6 @@ class FinalGame {
         this.addEventListeners();
     }
 
-    showTable() {   
-        /*По аналогии с Draftgame*/     
-        /*Обрабатываем таблицу, ее появление*/
-        const table = document.querySelector('.f_table');
-        table.style.display = 'table';
-        
-        setTimeout(() => {
-            table.style.opacity = '1';
-            const rows = document.querySelectorAll('.f_iksweb tbody tr');
-            rows.forEach((row, index) => {
-                const playerParameters = [
-                this.draftGame.team.players[index].name,
-                this.draftGame.team.players[index].position,
-                this.draftGame.team.players[index].age,
-                this.draftGame.team.players[index].nationality,
-                parseInt(this.draftGame.team.players[index].pace),
-                parseInt(this.draftGame.team.players[index].shooting),
-                parseInt(this.draftGame.team.players[index].passing),
-                parseInt(this.draftGame.team.players[index].dribling),
-                parseInt(this.draftGame.team.players[index].defending),
-                parseInt(this.draftGame.team.players[index].physicality),
-                this.draftGame.team.players[index].cost];
-                    /*Достав все параметры выбранного игрока,
-                выводим его качества в каждую ячейку соответсвующей строки*/
-                const cells = row.querySelectorAll('td');
-                cells.forEach((cell, i) => {
-                    cell.innerText = playerParameters[i];
-                    });
-                });
-        }, 100);
-    };
-
     /*Чтобы каждый игрок был экземпляром класса PLayer для команды ИИ*/
     makePlayersNew(players) {
         const mass = [];
@@ -593,6 +561,47 @@ class FinalGame {
         });
         return mass;
     }
+
+    showTable() {   
+        const field = new FootballField(this.draftGame.schemeDescription);
+        const aiTeam = new AI_team(this.draftGame.selectedLevel, field, this.draftGame.budgetData[this.draftGame.selectedLevel])
+        const playersForAI = this.makePlayersNew(this.draftGame.selectForAI)
+        const madeAITeam = aiTeam.chooseLevel(playersForAI)
+
+        /*По аналогии с Draftgame*/     
+        /*Обрабатываем таблицу, ее появление*/
+        const table = document.querySelector('.f_table');
+        table.style.display = 'table';
+        const playersAI = [];
+        setTimeout(() => {
+            table.style.opacity = '1';
+            const rows = document.querySelectorAll('.f_iksweb tbody tr');
+            rows.forEach((row, index) => {
+                playersAI.push(madeAITeam[index].name);
+                const playerParameters = [
+                this.draftGame.team.players[index].name,
+                this.draftGame.team.players[index].position,
+                this.draftGame.team.players[index].age,
+                this.draftGame.team.players[index].nationality,
+                parseInt(this.draftGame.team.players[index].pace),
+                parseInt(this.draftGame.team.players[index].shooting),
+                parseInt(this.draftGame.team.players[index].passing),
+                parseInt(this.draftGame.team.players[index].dribling),
+                parseInt(this.draftGame.team.players[index].defending),
+                parseInt(this.draftGame.team.players[index].physicality),
+                this.draftGame.team.players[index].cost];
+                    /*Достав все параметры выбранного игрока,
+                выводим его качества в каждую ячейку соответсвующей строки*/
+                const cells = row.querySelectorAll('td');
+                cells.forEach((cell, i) => {
+                    cell.innerText = playerParameters[i];
+                    if (!playersAI.includes(playerParameters[0])){
+                        cell.style.backgroundColor = 'red'; 
+                    }
+                    });
+                });
+        }, 100);
+    };
 
     showTable2() {        
         /*Достаем команду для ИИ*/
@@ -627,6 +636,7 @@ class FinalGame {
                 const cells = row.querySelectorAll('td');
                 cells.forEach((cell, i) => {
                     cell.innerText = playerParameters[i];
+                    cell.style.backgroundColor = 'grey';
                     });
                 });
         }, 100);
@@ -644,7 +654,7 @@ class FinalGame {
         const playersForAI = this.makePlayersNew(this.draftGame.selectForAI)
         const madeAITeam = aiTeam.chooseLevel(playersForAI)
         console.log(madeAITeam)
-        
+            
          /*Обрабатываем таблицу, ее появление*/
          const table = document.querySelector('.f_table');
          table.style.display = 'table';
@@ -670,6 +680,7 @@ class FinalGame {
                  const cells = row.querySelectorAll('td');
                  cells.forEach((cell, i) => {
                      cell.innerText = playerParameters[i];
+                     cell.style.backgroundColor = 'grey';
                      });
                  });
          }, 100);
