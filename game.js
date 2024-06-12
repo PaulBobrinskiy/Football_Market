@@ -540,6 +540,8 @@ class FinalGame {
 
         this.f_coefAgeBtn = document.getElementById('f_myBtn6');
 
+        this.modalBudget = document.querySelector('.f_alert');
+
         this.addEventListeners();
     }
 
@@ -563,6 +565,7 @@ class FinalGame {
     }
 
     showTable() {   
+        var bdg = 0;
         const field = new FootballField(this.draftGame.schemeDescription);
         const aiTeam = new AI_team(this.draftGame.selectedLevel, field, this.draftGame.budgetData[this.draftGame.selectedLevel])
         const playersForAI = this.makePlayersNew(this.draftGame.selectForAI)
@@ -589,21 +592,38 @@ class FinalGame {
                 parseInt(this.draftGame.team.players[index].dribling),
                 parseInt(this.draftGame.team.players[index].defending),
                 parseInt(this.draftGame.team.players[index].physicality),
-                this.draftGame.team.players[index].cost];
+                parseInt(this.draftGame.team.players[index].cost)];
+
+                bdg += parseInt(this.draftGame.team.players[index].cost);
+                console.log(bdg)
                     /*Достав все параметры выбранного игрока,
                 выводим его качества в каждую ячейку соответсвующей строки*/
                 const cells = row.querySelectorAll('td');
+                if (this.draftGame.team.calculate_team_rate() > aiTeam.calculateTeamRating(madeAITeam)){
+                    cells.forEach((cell, i) => {
+                        cell.innerText = playerParameters[i];
+                            cell.style.backgroundColor = 'green'; 
+                        });
+                }
+                else{
                 cells.forEach((cell, i) => {
                     cell.innerText = playerParameters[i];
-                    if (!playersAI.includes(playerParameters[0])){
-                        cell.style.backgroundColor = 'red'; 
+                    if (playersAI.includes(playerParameters[0])){
+                        cell.style.backgroundColor = 'green'; 
                     }
                     });
+                }
                 });
+            this.modalBudget.style.display = "block";
+            setTimeout(() => {
+                this.modalBudget.style.opacity = '1';
+            }, 100);
+            this.modalBudget.innerHTML = 'Стоимость команды: ' + bdg;
         }, 100);
     };
 
     showTable2() {        
+        var bdg = 0;
         /*Достаем команду для ИИ*/
        const field = new FootballField(this.draftGame.schemeDescription);
        const aiTeam = new AI_team(this.draftGame.selectedLevel, field, this.draftGame.budgetData[this.draftGame.selectedLevel])
@@ -631,6 +651,7 @@ class FinalGame {
                 parseInt(madeAITeam[index].defending),
                 parseInt(madeAITeam[index].physicality),
                 madeAITeam[index].cost];
+                bdg += parseInt(madeAITeam[index].cost)
                     /*Достав все параметры выбранного игрока,
                 выводим его качества в каждую ячейку соответсвующей строки*/
                 const cells = row.querySelectorAll('td');
@@ -639,6 +660,11 @@ class FinalGame {
                     cell.style.backgroundColor = 'grey';
                     });
                 });
+            this.modalBudget.style.display = "block";
+            setTimeout(() => {
+                this.modalBudget.style.opacity = '1';
+            }, 100);
+            this.modalBudget.innerHTML = 'Стоимость команды: ' + bdg;
         }, 100);
 
         aiTeam.calculateChemistryCoefficient
@@ -648,6 +674,7 @@ class FinalGame {
     };
 
     showTable3() {        
+        var bdg = 0;
         /*Аналогично достаем команду для ИИ, только ставим "бесконечный бюджет"*/
         const field = new FootballField(this.draftGame.schemeDescription);
         const aiTeam = new AI_team('hard', field, 1000000)
@@ -675,6 +702,7 @@ class FinalGame {
                  parseInt(madeAITeam[index].defending),
                  parseInt(madeAITeam[index].physicality),
                  madeAITeam[index].cost];
+                 bdg += parseInt(madeAITeam[index].cost)
                      /*Достав все параметры выбранного игрока,
                  выводим его качества в каждую ячейку соответсвующей строки*/
                  const cells = row.querySelectorAll('td');
@@ -683,6 +711,11 @@ class FinalGame {
                      cell.style.backgroundColor = 'grey';
                      });
                  });
+            this.modalBudget.style.display = "block";
+            setTimeout(() => {
+                this.modalBudget.style.opacity = '1';
+            }, 100);
+            this.modalBudget.innerHTML = 'Стоимость команды: ' + bdg;
          }, 100);
          aiTeam.calculateChemistryCoefficient
          this.f_rateBtn.innerText = 'Рейтинг команды после добавления игрока: ' + (aiTeam.calculateTeamRating(madeAITeam)).toFixed(2);
